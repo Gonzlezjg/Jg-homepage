@@ -1,13 +1,29 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'M PLUS Rounded 1c';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.animated-logo {
+  animation: flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #f1f1f1, 0 0 6px #f1f1f1, 0 0 8px #f1f1f1,
+      0 0 12px #f1f1f1, 0 0 40px #f1f1f1, 0 0 60px #f1f1f1, 0 0 75px #f1f1f1,
+      0 0 95px #f1f1f1;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }

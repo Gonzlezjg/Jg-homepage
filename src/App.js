@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from '@mui/material'
+import NavBar from './components/NavBar'
+
+import CssBaseline from '@mui/material/CssBaseline'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { myTheme } from './theme/theme'
+import { useMemo, useContext } from 'react'
+import { ColorModeContext } from './context/ColorModeContext'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Work from './components/Work'
 
 function App() {
+  const { colorMode } = useContext(ColorModeContext)
+
+  const theme = useMemo(() => createTheme(myTheme(colorMode)), [colorMode])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          px: 1
+        }}
+      >
+        <NavBar />
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/work" element={<Work />} />
+          </Routes>
+        </BrowserRouter>
+      </Box>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App

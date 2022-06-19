@@ -19,7 +19,7 @@ const Home = () => {
           <span style={{ color: '#3f51b5' }}>programación</span> hace unos años,
           empece a aprender de forma autodidacta. Al año de haber empezado a ser
           autodidacta conseguí mi primer empleo en una empresa de desarrollo de
-          software. Actualmente me dedico al desarrollo fullstack, tambien he
+          software. Actualmente me dedico al desarrollo fullstack, donde tambien he
           participado en proyectos blockchain.
         </Bio>
         <Experiencie>

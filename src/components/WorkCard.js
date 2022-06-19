@@ -29,9 +29,9 @@ const dataCard = [
 
 const WorkCard = () => {
   return (
-    <Grid mt={4} container spacing={2}>
+    <Grid mt={4} justifyContent="center" container spacing={3}>
       {dataCard.map(({ title, description, image, icons, link }) => (
-        <Grid item xs={6} key={title}>
+        <Grid item xs={8} md={6} key={title}>
           <AnimatePresence exitBeforeEnter>
             <motion.div
               initial={{ x: -50, y: -30, opacity: 0, delay: 0.5 }}
@@ -41,6 +41,7 @@ const WorkCard = () => {
               <Card
                 sx={{
                   minWidth: 260,
+                  maxWidth: 280,
                   minHeight: 420,
                   display: 'flex',
                   flexDirection: 'column',
